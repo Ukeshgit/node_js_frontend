@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nodejs_tut/home.dart';
-import 'package:nodejs_tut/practice/controller.dart';
-import 'package:nodejs_tut/practice/view.dart';
+import 'package:nodejs_tut/riverpod_get_post/controller/controller.dart';
+import 'package:nodejs_tut/riverpod_get_post/counter_app/view/counter_app.dart';
+import 'package:nodejs_tut/riverpod_get_post/view/view.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: RegData(),
+      home: CounterApp(),
     );
   }
 }

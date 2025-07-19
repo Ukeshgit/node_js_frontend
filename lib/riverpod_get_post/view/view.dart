@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nodejs_tut/practice/api_provider.dart';
+import 'package:nodejs_tut/riverpod_get_post/provider/api_provider.dart';
+import 'package:nodejs_tut/riverpod_get_post/view/create_user_view.dart';
 
 class RegData extends ConsumerWidget {
   const RegData({super.key});
@@ -9,6 +10,19 @@ class RegData extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var apidata = ref.watch(apiProvider);
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return CreateUserView();
+              },
+            ),
+          );
+        },
+        child: Icon(Icons.add),
+      ),
       appBar: AppBar(title: Text("API"), backgroundColor: Colors.deepPurple),
       body: Container(
         child: apidata.when(
